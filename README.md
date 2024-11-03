@@ -1,0 +1,2 @@
+# BookIT-by-Atharv
+This project is a custom-built Airbnb clone, developed to showcase my web development skills. The backend is powered by MongoDB, Express, and Node.js, with version control managed through Git and GitHub. I deployed the application on Render, ensuring all APIs follow RESTful principles and support full CRUD functionality. The project is structured using the MVC (Model-View-Controller) design pattern for organized and maintainable code.
