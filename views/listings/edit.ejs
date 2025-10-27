@@ -18,13 +18,20 @@
         </div>
 
         <div class="mb-3">
-          Original Listing Image <br>
-          <img src="<%= originalImageUrl %>" alt="Listing_image">
+          <label class="form-label">Current Images</label><br>
+          <% if(listing.images && listing.images.length > 0) { %>
+            <% listing.images.forEach((image, index) => { %>
+              <img src="<%= image.url.replace('/upload', '/upload/w_250') %>" alt="Listing image <%= index + 1 %>" class="me-2 mb-2" style="width: 150px; height: 100px; object-fit: cover; border-radius: 8px;">
+            <% }); %>
+          <% } else if(listing.image) { %>
+            <img src="<%= originalImageUrl %>" alt="Listing_image" style="width: 150px; height: 100px; object-fit: cover; border-radius: 8px;">
+          <% } %>
         </div>
   
         <div class="mb-3">
-          <label for="image" class="form-label">Image</label>
-          <input name="listing[image]" value="<%= listing.image.url %>" type="file" class="form-control"/>
+          <label for="images" class="form-label">Add More Images</label>
+          <input name="listing[images]" type="file" class="form-control" multiple accept="image/*"/>
+          <div class="form-text">Select additional images (existing images will be kept)</div>
         </div>
        <div class="row">
         <div class="mb-3 col-md-4">
@@ -45,6 +52,12 @@
           <label for="location" class="form-label">Location</label>
           <input name="listing[location]" value="<%= listing.location %>" type="text" class="form-control" required/>
           <div class="invalid-feedback">Enter your City/State!</div>
+        </div>
+        
+        <div class="mb-3">
+          <label for="tags" class="form-label">Tags</label>
+          <input name="listing[tags]" value="<%= listing.tags ? listing.tags.join(', ') : '' %>" type="text" class="form-control"/>
+          <div class="form-text">Enter tags separated by commas</div>
         </div>
   
         <button class="btn btn-dark edit-btn mb-3 mt-3">Edit</button>

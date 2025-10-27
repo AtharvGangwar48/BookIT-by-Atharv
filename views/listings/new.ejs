@@ -1,9 +1,33 @@
 <% layout("/layouts/boilerPlate") %>
+<style>
+  .form-container {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  .form-control:focus {
+    border-color: #fe424d;
+    box-shadow: 0 0 0 0.2rem rgba(254, 66, 77, 0.25);
+  }
+  .btn-primary {
+    background: linear-gradient(45deg, #fe424d, #ff6b6b);
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(254, 66, 77, 0.3);
+  }
+</style>
   <body>
     <div class="row">
       <div class="col-8 offset-2">
-        <br>
-        <h3>Create a New Listing</h3>
+        <div class="form-container animate-fadeInUp">
+        <h3 class="text-center mb-4"><i class="fa-solid fa-plus-circle text-primary"></i> Create a New Listing</h3>
         <form 
         method="POST" 
         action="/listings" 
@@ -29,14 +53,18 @@
           </div>
     
           <div class="mb-3">
-            <label for="image" class="form-label">Image</label>
+            <label for="images" class="form-label">Images (Multiple)</label>
             <input
-            name="listing[image]"
+            name="listing[images]"
             type="file"
             class="form-control"
+            multiple
+            accept="image/*"
             required
             />
-            <div class="invalid-feedback">Select a file!</div>
+            <div class="form-text">Select multiple images to showcase your property</div>
+            <div class="invalid-feedback">Select at least one image!</div>
+            <div id="image-preview-container" class="mt-2"></div>
           </div>
 
          <div class="row">
@@ -61,12 +89,47 @@
             placeholder="City/State"
             type="text"
             class="form-control"
+            id="location-input"
             required/>
             <div class="invalid-feedback">Enter your City/State!</div>
+            <div class="form-text">We'll automatically find coordinates for map display</div>
           </div>
-          <button class="btn btn-dark add-btn mt-3">Add</button>
-          <br><br>
+
+          <div class="mb-3">
+            <label for="tags" class="form-label">Tags</label>
+            <input
+            name="listing[tags]"
+            placeholder="Enter tags separated by commas (e.g., beach, luxury, pool)"
+            type="text"
+            class="form-control"
+            value="other"/>
+            <div class="form-text">Add relevant tags to help users find your listing</div>
+          </div>
+          <button class="btn btn-primary add-btn mt-3 w-100"><i class="fa-solid fa-plus"></i> Create Listing</button>
         </form>
+        </div>
       </div>
     </div>
+    
+    <script>
+        // Multiple image preview
+        document.querySelector('input[name="listing[images]"]').addEventListener('change', function(e) {
+            const container = document.getElementById('image-preview-container');
+            container.innerHTML = '';
+            
+            Array.from(e.target.files).forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const div = document.createElement('div');
+                    div.className = 'd-inline-block me-2 mb-2 position-relative';
+                    div.innerHTML = `
+                        <img src="${e.target.result}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px;" alt="Preview ${index + 1}">
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-1">${index + 1}</span>
+                    `;
+                    container.appendChild(div);
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>
   </body>

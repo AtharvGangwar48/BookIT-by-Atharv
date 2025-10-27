@@ -1,0 +1,186 @@
+<% layout("/layouts/boilerPlate") %>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+  }
+  
+  .content-section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .feature-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    height: 100%;
+  }
+  
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .stats-card {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+</style>
+
+<body>
+  <div class="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="display-4 fw-bold mb-3">About BookIT</h1>
+          <p class="lead opacity-90">Your trusted platform for finding the perfect home away from home</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    
+    <!-- Mission Section -->
+    <div class="content-section">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h2 class="fw-bold mb-4">Our Mission</h2>
+          <p class="text-muted mb-4">
+            BookIT was created to revolutionize the way people find and book accommodations. We believe that everyone 
+            deserves access to comfortable, affordable, and unique places to stay, whether for business or leisure.
+          </p>
+          <p class="text-muted">
+            Our platform connects travelers with property owners, creating a community built on trust, quality, 
+            and exceptional experiences.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <div class="stats-card">
+            <div class="stat-number">1000+</div>
+            <p class="mb-0">Properties Listed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="content-section">
+      <h2 class="text-center fw-bold mb-5">Why Choose BookIT?</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Secure & Safe</h5>
+            <p class="text-muted">Your data and transactions are protected with industry-standard security measures.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-search"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Easy Discovery</h5>
+            <p class="text-muted">Find the perfect property with our advanced search and filtering capabilities.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Quality Assured</h5>
+            <p class="text-muted">All properties are verified and reviewed by our community for your peace of mind.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Developer Section -->
+    <div class="content-section">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-4">Meet the Developer</h2>
+          <p class="text-muted mb-3">
+            BookIT is developed by <strong>Atharv Gangwar</strong>, a passionate full-stack developer dedicated to 
+            creating innovative web solutions that solve real-world problems.
+          </p>
+          <p class="text-muted mb-4">
+            With expertise in modern web technologies including Node.js, Express, MongoDB, and React, Atharv brings 
+            ideas to life through clean, efficient, and user-friendly applications.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="https://github.com/AtharvGangwar48" target="_blank" class="btn btn-outline-primary">
+              <i class="fa-brands fa-github me-2"></i>GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/atharvgangwar/" target="_blank" class="btn btn-outline-primary">
+              <i class="fa-brands fa-linkedin me-2"></i>LinkedIn
+            </a>
+            <a href="mailto:atharvgangwar8@gmail.com" class="btn btn-outline-primary">
+              <i class="fa-solid fa-envelope me-2"></i>Contact
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center">
+          <div class="feature-icon mx-auto mb-3" style="width: 120px; height: 120px; font-size: 3rem;">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h5 class="fw-bold">Full-Stack Developer</h5>
+          <p class="text-muted">Building the future of travel</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technology Section -->
+    <div class="content-section">
+      <h2 class="text-center fw-bold mb-5">Built With Modern Technology</h2>
+      <div class="row g-4">
+        <div class="col-md-3 text-center">
+          <i class="fa-brands fa-node-js fa-3x text-success mb-3"></i>
+          <h6 class="fw-bold">Node.js</h6>
+        </div>
+        <div class="col-md-3 text-center">
+          <i class="fa-solid fa-database fa-3x text-primary mb-3"></i>
+          <h6 class="fw-bold">MongoDB</h6>
+        </div>
+        <div class="col-md-3 text-center">
+          <i class="fa-brands fa-bootstrap fa-3x text-purple mb-3"></i>
+          <h6 class="fw-bold">Bootstrap</h6>
+        </div>
+        <div class="col-md-3 text-center">
+          <i class="fa-solid fa-cloud fa-3x text-info mb-3"></i>
+          <h6 class="fw-bold">Cloud Storage</h6>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>

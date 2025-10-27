@@ -1,14 +1,82 @@
-<footer>
-    <div class="f-info">
-        <div class="f-info-social">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-linkedin"></i>
-        </div>
-        <div class="f-info-brand">&copy; BookIT Pvt. Limited</div>
-        <div class="f-info-links">
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms</a>
+<footer class="bg-white shadow-lg mt-5">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fa-regular fa-compass text-primary me-2" style="font-size: 1.5rem;"></i>
+                    <h5 class="mb-0 fw-bold">BookIT</h5>
+                </div>
+                <p class="text-muted mb-3">Your Home Away From Home - Discover amazing places to stay around the world.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="/privacy" class="text-decoration-none text-muted hover-link">Privacy Policy</a>
+                    <span class="text-muted">•</span>
+                    <a href="/about" class="text-decoration-none text-muted hover-link">About Us</a>
+                    <span class="text-muted">•</span>
+                    <a href="/listings" class="text-decoration-none text-muted hover-link">Explore</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h6 class="fw-bold mb-3">Connect with Developer</h6>
+                <div class="d-flex flex-wrap gap-3 mb-3">
+                    <a href="https://linktr.ee/AtharvGangwar48" target="_blank" class="social-link" title="Linktree">
+                        <i class="fa-solid fa-link"></i>
+                    </a>
+                    <a href="https://github.com/AtharvGangwar48" target="_blank" class="social-link" title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/atharvgangwar/" target="_blank" class="social-link" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://unstop.com/u/athargan40228" target="_blank" class="social-link" title="Unstop">
+                        <span class="unstop-icon">Un</span>
+                    </a>
+                    <a href="mailto:atharvgangwar8@gmail.com" class="social-link" title="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://x.com/Atharv_48" target="_blank" class="social-link" title="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/nirvana.9_11/" target="_blank" class="social-link" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+                <p class="text-muted small mb-0">
+                    © <%= new Date().getFullYear() %> Atharv Gangwar. All rights reserved.
+                </p>
+            </div>
         </div>
     </div>
 </footer>
+
+<style>
+.hover-link:hover {
+    color: #3b82f6 !important;
+    transition: color 0.2s ease;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    color: #64748b;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.social-link:hover {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+}
+
+.unstop-icon {
+    font-size: 10px;
+    font-weight: bold;
+}
+</style>

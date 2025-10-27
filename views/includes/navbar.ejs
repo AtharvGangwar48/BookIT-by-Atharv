@@ -31,8 +31,8 @@
         </div>
 
         <div class="navbar-nav ms-auto">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2 search-input" type="search" placeholder="Search desitinations" aria-label="Search">
+          <form class="d-flex" role="search" method="GET" action="/listings">
+            <input class="form-control me-2 search-input" type="search" name="search" placeholder="Search destinations" aria-label="Search" value="<%= typeof search !== 'undefined' ? search : '' %>">
             <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
           </form>
         </div>     

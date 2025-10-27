@@ -1,0 +1,115 @@
+<% layout("/layouts/boilerPlate") %>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+  }
+  
+  .content-section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .section-title {
+    color: #1e293b;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  
+  .text-content {
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  
+  .highlight-box {
+    background: #f0f9ff;
+    border-left: 4px solid #3b82f6;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+  }
+</style>
+
+<body>
+  <div class="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="display-4 fw-bold mb-3">Privacy Policy</h1>
+          <p class="lead opacity-90">How we protect and handle your personal information</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        
+        <div class="content-section">
+          <h2 class="section-title">Introduction</h2>
+          <p class="text-content">
+            At BookIT, we are committed to protecting your privacy and ensuring the security of your personal information. 
+            This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform.
+          </p>
+          <div class="highlight-box">
+            <strong>Last Updated:</strong> <%= new Date().toLocaleDateString() %>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h2 class="section-title">Information We Collect</h2>
+          <h4>Personal Information</h4>
+          <ul class="text-content">
+            <li>Name, email address, and contact information</li>
+            <li>Profile information and preferences</li>
+            <li>Payment and billing information</li>
+            <li>Communication records and reviews</li>
+          </ul>
+          
+          <h4>Usage Information</h4>
+          <ul class="text-content">
+            <li>Device information and IP address</li>
+            <li>Browsing behavior and search history</li>
+            <li>Location data (with your consent)</li>
+            <li>Cookies and similar tracking technologies</li>
+          </ul>
+        </div>
+
+        <div class="content-section">
+          <h2 class="section-title">How We Use Your Information</h2>
+          <p class="text-content">We use your information to:</p>
+          <ul class="text-content">
+            <li>Provide and improve our booking services</li>
+            <li>Process transactions and send confirmations</li>
+            <li>Communicate with you about your bookings</li>
+            <li>Personalize your experience and recommendations</li>
+            <li>Ensure platform security and prevent fraud</li>
+            <li>Comply with legal obligations</li>
+          </ul>
+        </div>
+
+        <div class="content-section">
+          <h2 class="section-title">Contact Us</h2>
+          <p class="text-content">
+            If you have any questions about this Privacy Policy, please contact us:
+          </p>
+          <div class="highlight-box">
+            <p class="mb-2"><strong>Email:</strong> atharvgangwar8@gmail.com</p>
+            <p class="mb-0"><strong>Developer:</strong> Atharv Gangwar</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
