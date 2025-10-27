@@ -5,7 +5,7 @@ if(process.env.NODE_ENV != "production"){
 const express = require("express");
 const MongoStore = require('connect-mongo');
 const app = express();
-const moongose = require("mongoose");
+const mongoose = require("mongoose");
 
 const dbUrl = process.env.ATLASTDB_URL;
 
@@ -31,7 +31,7 @@ main()
   })
 
 async function main() {
-    await moongose.connect(dbUrl);
+    await mongoose.connect(dbUrl);
 };
 
 app.set("view engine", "ejs");
@@ -98,6 +98,15 @@ app.use((req, res, next)=>{
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/",userRouter);
+
+// Static pages routes
+app.get("/privacy", (req, res) => {
+    res.render("privacy.ejs");
+});
+
+app.get("/about", (req, res) => {
+    res.render("about.ejs");
+});
 
 
 app.all("*",(req,res, next)=>{

@@ -9,13 +9,21 @@ const listingSchema = new Schema({
         required: true,
     },
     description: String,
-    image: {
+    images: [{
         url: String,
         filename: String
-    },
+    }],
     price: Number,
     location: String,
     country: String,
+    coordinates: {
+        lat: Number,
+        lng: Number
+    },
+    tags: {
+        type: [String],
+        default: ["other"]
+    },
     reviews: [
         {
             type: Schema.Types.ObjectId,

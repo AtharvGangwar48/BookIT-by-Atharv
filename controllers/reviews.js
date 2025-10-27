@@ -6,7 +6,15 @@ module.exports.createReview = async (req,res,next)=>{
     let listing = await Listing.findById(req.params.id);
     let newReview = new Review(req.body.review);
     newReview.author = req.user._id;
-    // console.log(newReview);
+    
+    // Handle review images
+    if (req.files && req.files.length > 0) {
+        newReview.images = req.files.map(file => ({
+            url: file.path,
+            filename: file.filename
+        }));
+    }
+    
     listing.reviews.push(newReview);
     await newReview.save();
     await listing.save();
